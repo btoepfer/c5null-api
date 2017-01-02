@@ -1,0 +1,2 @@
+class AliveTest < ApplicationRecord
+end
