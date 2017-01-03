@@ -1,3 +1,3 @@
 class AliveTestSerializer < ActiveModel::Serializer
-  attributes :message
+  attributes :id, :message
 end
