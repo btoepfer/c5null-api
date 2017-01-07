@@ -10,24 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103120113) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "alive_tests", force: :cascade do |t|
-    t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "app_configs", force: :cascade do |t|
-    t.string   "name",        limit: 30,                   null: false
-    t.string   "description", limit: 2000
-    t.boolean  "active",                   default: false, null: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.index ["name"], name: "index_app_configs_on_name", unique: true, using: :btree
-  end
 
 end

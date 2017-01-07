@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe AppConfigsController, type: :controller do
+RSpec.describe BlueprintsController, type: :controller do
   describe "GET #index" do
     let!(:cf1) {
-      FactoryGirl.create(:app_config, name: "My first config")
+      FactoryGirl.create(:blueprint, name: "My first config")
     }
     let!(:cf2) {
-      FactoryGirl.create(:app_config, name: "My second config")
+      FactoryGirl.create(:blueprint, name: "My second config")
     }
 
     it "two records found" do
@@ -18,10 +18,10 @@ RSpec.describe AppConfigsController, type: :controller do
   
   describe "GET #show" do
     let!(:cf1) {
-      FactoryGirl.create(:app_config, id: 1, name: "My first config")
+      FactoryGirl.create(:blueprint, id: 1, name: "My first config")
     }
     let!(:cf2) {
-      FactoryGirl.create(:app_config, id: 2, name: "My second config")
+      FactoryGirl.create(:blueprint, id: 2, name: "My second config")
     }
 
     it "first record found" do
@@ -42,18 +42,18 @@ RSpec.describe AppConfigsController, type: :controller do
   
   describe "PUT #update" do
     let!(:cf1) {
-      FactoryGirl.create(:app_config, id: 1, name: "My first config")
+      FactoryGirl.create(:blueprint, id: 1, name: "My first config")
     }
     
     it "returns updated record" do
-      put :update, :params => {id: 1, app_config: {name: "My updated config"}, format: :json}
+      put :update, :params => {id: 1, blueprint: {name: "My updated config"}, format: :json}
       expect(response.body).to match /My updated config/im
     end
   end 
   
   describe "POST #create" do
     it "returns created record" do
-      post :create, :params => {app_config: {name: "My new config"}, format: :json}
+      post :create, :params => {blueprint: {name: "My new config"}, format: :json}
       expect(response.body).to match /My new config/im
     end
   end 

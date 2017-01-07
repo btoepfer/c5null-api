@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :app_config do
+  factory :blueprint do
     name "MyString"
     description "MyText"
   end

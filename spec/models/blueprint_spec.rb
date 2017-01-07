@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe AppConfig, type: :model do
+RSpec.describe Blueprint, type: :model do
   describe "active" do
     let(:cf) {
-      FactoryGirl.create(:app_config, name: "My first config")
+      FactoryGirl.create(:blueprint, name: "My first config")
     }
     
     # neue Konfigurationen sollen immer inaktiv sein
@@ -16,15 +16,15 @@ RSpec.describe AppConfig, type: :model do
  
   describe "name" do
     let!(:cf) {
-      FactoryGirl.create(:app_config, name: "My first config")
+      FactoryGirl.create(:blueprint, name: "My first config")
     }
     let!(:cf2) {
-      FactoryGirl.create(:app_config, name: "My second config")
+      FactoryGirl.create(:blueprint, name: "My second config")
     }
 
 
     it "two records found" do
-      cf_count = AppConfig.count
+      cf_count = Blueprint.count
       expect(cf_count).to eq 2
     end
     
