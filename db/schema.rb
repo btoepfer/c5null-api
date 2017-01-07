@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20170103120113) do
   end
 
   create_table "app_configs", force: :cascade do |t|
-    t.string   "name",        limit: 100,                 null: false
-    t.text     "description"
-    t.boolean  "active",                  default: false, null: false
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.string   "name",        limit: 30,                   null: false
+    t.string   "description", limit: 2000
+    t.boolean  "active",                   default: false, null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.index ["name"], name: "index_app_configs_on_name", unique: true, using: :btree
   end
 

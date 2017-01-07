@@ -1,7 +1,7 @@
 class AppConfigsController < ApplicationController
   
   def index
-    @cf = AppConfig.all
+    @cf = AppConfig.all.order(:name)
     render json: @cf
   end
   
@@ -24,6 +24,13 @@ class AppConfigsController < ApplicationController
     end 
   end
 
+  def destroy
+     @cf = find_app_config(params[:id])
+    if @cf.destroy
+      render json: nil
+    end 
+  end
+  
   # Private Methoden
   private
   def find_app_config(id)
